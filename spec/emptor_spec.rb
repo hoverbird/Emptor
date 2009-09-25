@@ -9,13 +9,13 @@ class EmptorTest < Test::Unit::TestCase
     end
   
     context "an empty collection on the left and a nonempty collection on the right" do
-      should "return the non-empty element" do
+      should "return the first non-empty element" do
         assert_equal((empty.emptor nonempty), nonempty)
       end
     end
   
     context "a nonempty collection on the left and an empty collection on the right " do
-      should "return the non-empty element" do
+      should "return the first non-empty element" do
         assert_equal((nonempty.emptor empty), nonempty)
       end
     end
@@ -77,8 +77,5 @@ class EmptorTest < Test::Unit::TestCase
         assert_equal("first", ("first".emptor "second"))
       end
     end
-    
   end
-  
-  
 end
