@@ -12,13 +12,13 @@ Returns the first object that's either a non-empty collection (collections are a
 
   $ []._or\_ [1,2,3]
   # => [1,2,3]
-  
+
   $ "yep"._or\_ [1,2,3]
   # => "yep"
-  
+
   $ []._or\_ []
   # => nil
-  
+
 One example of usage would be while performing an ActiveRecord find with scoping, where you'd like to return an unscoped set if the first set turns out empty. 
 
 This:
