@@ -1,9 +1,12 @@
 module Kernel
   def emptor(other)
-    return (self || other) unless self.respond_to?(:empty?) || other.respond_to?(:empty?)
-    if (self.respond_to?(:empty?) && !self.empty?) || (!self.respond_to?(:empty?) && self)
+    self_knows_emptiness, other_knows_emptiness = respond_to?(:empty?), other.respond_to?(:empty?)
+    
+    if !self_knows_emptiness && !other_knows_emptiness
+      self || other 
+    elsif self_knows_emptiness && !self.empty? || !self_knows_emptiness && self
       self
-    elsif (other.respond_to?(:empty?) && !other.empty?) || (!other.respond_to?(:empty?) && other)
+    elsif other_knows_emptiness && !other.empty? || !other_knows_emptiness && other
       other
     end
   end

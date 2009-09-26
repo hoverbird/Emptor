@@ -22,7 +22,7 @@ class EmptorTest < Test::Unit::TestCase
     
     context "With two empty collections" do
       should "return nil" do
-        assert_equal((empty.emptor empty), nil)
+        assert_equal(nil, (empty.emptor empty))
       end
     end
   end
