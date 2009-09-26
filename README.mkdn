@@ -6,14 +6,14 @@ EMPTOR CAVEAT
 ---------------------
 Emptor is a hack.  It's merely a shorter expression for those who want to consider empty collections to be falsy.  Calling
 
-  $ this._or_ that
+  $ this._or\_ that
   
 Returns the first object that's either a non-empty collection (collections are assumed if the operand responds_to :empty?) or a non-collection that's truthy (in the Colbertian sense). So:
 
-  $ []._or_ [1,2,3]
+  $ []._or\_ [1,2,3]
   # => [1,2,3]
   
-  $ "yep"._or_ [1,2,3]
+  $ "yep"._or\_ [1,2,3]
   # => "yep"
   
 One example of usage would be while performing an ActiveRecord find with scoping, where you'd like to return an unscoped set if the first set turns out empty. 
@@ -24,7 +24,7 @@ This:
   
 Becomes:
 
-  $ User.all.with_photos._or_ User.all
+  $ User.all.with_photos._or\_ User.all
   
 That's all, folks.
 
